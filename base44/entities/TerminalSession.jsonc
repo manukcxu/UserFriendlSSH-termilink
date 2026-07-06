@@ -1,0 +1,55 @@
+{
+  "name": "TerminalSession",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Session name"
+    },
+    "host": {
+      "type": "string",
+      "description": "SSH host address"
+    },
+    "port": {
+      "type": "number",
+      "default": 22
+    },
+    "username": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "connected",
+        "disconnected"
+      ],
+      "default": "disconnected"
+    },
+    "command_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string"
+          },
+          "output": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          },
+          "is_error": {
+            "type": "boolean"
+          }
+        }
+      },
+      "default": []
+    }
+  },
+  "required": [
+    "name",
+    "host",
+    "username"
+  ]
+}
