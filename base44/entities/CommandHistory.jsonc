@@ -1,0 +1,53 @@
+{
+  "name": "CommandHistory",
+  "type": "object",
+  "properties": {
+    "spoken_text": {
+      "type": "string"
+    },
+    "command": {
+      "type": "string"
+    },
+    "explanation": {
+      "type": "string"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "safe",
+        "caution",
+        "dangerous"
+      ]
+    },
+    "breakdown": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "part": {
+            "type": "string"
+          },
+          "meaning": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    },
+    "executed": {
+      "type": "boolean",
+      "default": false
+    },
+    "output": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "command",
+    "explanation",
+    "risk_level"
+  ]
+}

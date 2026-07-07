@@ -6,7 +6,12 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
-import Home from '@/pages/Home';
+import TermVoiceHome from '@/pages/TermVoiceHome';
+import Categories from '@/pages/Categories';
+import Result from '@/pages/Result';
+import History from '@/pages/History';
+import Learn from '@/pages/Learn';
+import Settings from '@/pages/Settings';
 import Login from '@/pages/Login';
 import Register from '@/pages/Register';
 import ForgotPassword from '@/pages/ForgotPassword';
@@ -45,7 +50,12 @@ const AuthenticatedApp = () => {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route element={<ProtectedRoute unauthenticatedElement={<Navigate to="/login" replace />} />}>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<TermVoiceHome />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/result/:id" element={<Result />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/learn" element={<Learn />} />
+        <Route path="/settings" element={<Settings />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>

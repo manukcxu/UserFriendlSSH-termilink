@@ -1,0 +1,36 @@
+{
+  "name": "SSHConnection",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "host": {
+      "type": "string"
+    },
+    "port": {
+      "type": "number",
+      "default": 22
+    },
+    "username": {
+      "type": "string"
+    },
+    "encrypted_credential": {
+      "type": "string",
+      "description": "Password or private key"
+    },
+    "credential_type": {
+      "type": "string",
+      "enum": [
+        "password",
+        "private_key"
+      ],
+      "default": "password"
+    }
+  },
+  "required": [
+    "name",
+    "host",
+    "username"
+  ]
+}
